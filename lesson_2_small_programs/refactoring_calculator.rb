@@ -42,7 +42,6 @@ end
 prompt("Hi #{name}!")
 
 loop do # main loop
-
   number1 = ''
 
   loop do
@@ -74,41 +73,39 @@ loop do # main loop
     3) multiply
     4) divide
   MSG
-  
+
   prompt(operator_prompt)
-  
+
   operator = ''
-  
+
   loop do
     operator = Kernel.gets().chomp()
     if %w(1 2 3 4).include?(operator)
-      break 
+      break
     else
       prompt("Must choose 1,2,3 or 4")
     end
-  end 
+  end
 
   prompt("#{operation_to_message(operator)} the two numbers...")
 
   result = case operator
-    when '1' 
-      number1.to_i() + number2.to_i()
-    when '2' 
-      number1.to_i() - number2.to_i()
-    when '3'
-      number1.to_i() * number2.to_i()
-    when '4'
-      number1.to_f() / number2.to_f()
-  end
+           when '1'
+             number1.to_i() + number2.to_i()
+           when '2'
+             number1.to_i() - number2.to_i()
+           when '3'
+             number1.to_i() * number2.to_i()
+           when '4'
+             number1.to_f() / number2.to_f()
+           end
 
   prompt("The result is #{result}")
-  
+
   prompt("Do you want to perform another calculation? (Y to calculate again)")
-  
+
   answer = Kernel.gets().chomp()
   break unless answer.downcase.start_with?('y')
-  
 end
 
 prompt("Thank you for using the calculator. Good bye!")
-
