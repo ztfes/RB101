@@ -48,3 +48,9 @@ prompt("Enter your loan duration in months:") # loan duration in months
 loan_duration = gets().chomp().to_f
 
 mortgage_calc(loan_amount, annual_interest_rate, loan_duration) # compute
+
+# TO DO
+
+# Add input validation
+# Improve command line formatting
+# Prompt user for additional calculations if desired
