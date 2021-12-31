@@ -144,3 +144,21 @@ end
 
 prompt("Thanks for using this program")
 
+
+=begin
+
+A WAY BETTER ANSWER from "Katherine"
+
+ORDINALS = %w[1st 2nd 3rd 4th 5th last]
+
+numbers = ORDINALS.each_with_object([]) do |ord, nums|
+  puts "==> Enter the #{ord} number:"
+  nums << gets.chomp.to_i
+end
+
+last = numbers.pop
+appears = numbers.count(last) > 0 ? 'appears' : 'does not appear'
+
+puts "The number #{last} #{appears} in #{numbers}."
+
+=end
