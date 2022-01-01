@@ -11,9 +11,9 @@
 
 VALID_CHOICES = ['rock', 'paper', 'scissors', 'lizard', 'spock']
 
-WINNERS = {'rock': ['scissors', 'lizard'], 'paper': ['rock', 'spock'],
-          'scissors': ['paper', 'lizard'], 'lizard': ['spock', 'paper'],
-          'spock': ['rock', 'scissors']}
+WINNERS = { 'rock': ['scissors', 'lizard'], 'paper': ['rock', 'spock'],
+            'scissors': ['paper', 'lizard'], 'lizard': ['spock', 'paper'],
+            'spock': ['rock', 'scissors'] }
 
 def prompt(message)
   Kernel.puts("\n => #{message}")
@@ -40,7 +40,7 @@ loop do
   loop do
     prompt("Round #{counter}! Choose one: #{VALID_CHOICES.join(', ')}")
     choice = gets.chomp.downcase
-    
+
     case choice
     when 'r'
       choice << 'ock'
@@ -53,7 +53,7 @@ loop do
     when 'sp'
       choice << 'ock'
     end
-      
+
     if VALID_CHOICES.include?(choice)
       counter += 1
       break
